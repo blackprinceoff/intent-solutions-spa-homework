@@ -1,6 +1,6 @@
 import { describe, test, expect, beforeEach, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import React from 'react';
 
 import { api } from '../src/services/api';
@@ -184,7 +184,7 @@ describe('Data Integrity', () => {
 
 describe('UserCard', () => {
   test('відображає ім\'я, email та компанію', () => {
-    render(<BrowserRouter><UserCard user={mockUsers[0]} /></BrowserRouter>);
+    render(<HashRouter><UserCard user={mockUsers[0]} /></HashRouter>);
     expect(screen.getByText('Leanne Graham')).toBeInTheDocument();
     expect(screen.getByText('Sincere@april.biz')).toBeInTheDocument();
     expect(screen.getByText('Romaguera-Crona')).toBeInTheDocument();
